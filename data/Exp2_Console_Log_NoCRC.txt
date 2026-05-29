@@ -1,0 +1,42 @@
+--- 开始实验二: 纯SCL译码测试仿真 (No CRC) ---
+正在构造码长 N=%d (无 CRC 辅助)...
+
+>>> 开始仿真列表大小 L = 1 (纯SCL) <<<
+正在使用 'Processes' 配置文件启动并行池(parpool)...
+已连接到具有 14 个工作进程的并行池。
+Eb/N0 =  0.5 dB | 总帧数 =   500 | 错帧 =  439 | BLER = 8.78e-01 | 无损校验: Success (Passed)
+Eb/N0 =  1.0 dB | 总帧数 =   500 | 错帧 =  315 | BLER = 6.30e-01 | 无损校验: Success (Passed)
+Eb/N0 =  1.5 dB | 总帧数 =   500 | 错帧 =  155 | BLER = 3.10e-01 | 无损校验: Success (Passed)
+Eb/N0 =  2.0 dB | 总帧数 =  1000 | 错帧 =  125 | BLER = 1.25e-01 | 无损校验: Success (Passed)
+Eb/N0 =  2.5 dB | 总帧数 =  3500 | 错帧 =  105 | BLER = 3.00e-02 | 无损校验: Success (Passed)
+Eb/N0 =  3.0 dB | 总帧数 = 20500 | 错帧 =  100 | BLER = 4.88e-03 | 无损校验: Success (Passed)
+=> L=1 单帧平均译码耗时: 26.70 ms
+
+>>> 开始仿真列表大小 L = 2 (纯SCL) <<<
+Eb/N0 =  0.5 dB | 总帧数 =   500 | 错帧 =  392 | BLER = 7.84e-01 | 无损校验: Success (Passed)
+Eb/N0 =  1.0 dB | 总帧数 =   500 | 错帧 =  212 | BLER = 4.24e-01 | 无损校验: Success (Passed)
+Eb/N0 =  1.5 dB | 总帧数 =  1000 | 错帧 =  160 | BLER = 1.60e-01 | 无损校验: Success (Passed)
+Eb/N0 =  2.0 dB | 总帧数 =  4000 | 错帧 =  102 | BLER = 2.55e-02 | 无损校验: Success (Passed)
+Eb/N0 =  2.5 dB | 总帧数 = 17000 | 错帧 =  106 | BLER = 6.24e-03 | 无损校验: Success (Passed)
+Eb/N0 =  3.0 dB | 总帧数 = 50000 | 错帧 =   39 | BLER = 7.80e-04 | 无损校验: Success (Passed)
+=> L=2 单帧平均译码耗时: 72.25 ms
+
+>>> 开始仿真列表大小 L = 4 (纯SCL) <<<
+Eb/N0 =  0.5 dB | 总帧数 =   500 | 错帧 =  315 | BLER = 6.30e-01 | 无损校验: Success (Passed)
+Eb/N0 =  1.0 dB | 总帧数 =   500 | 错帧 =  148 | BLER = 2.96e-01 | 无损校验: Success (Passed)
+Eb/N0 =  1.5 dB | 总帧数 =  1500 | 错帧 =  135 | BLER = 9.00e-02 | 无损校验: Success (Passed)
+Eb/N0 =  2.0 dB | 总帧数 =  5500 | 错帧 =  104 | BLER = 1.89e-02 | 无损校验: Success (Passed)
+Eb/N0 =  2.5 dB | 总帧数 = 32500 | 错帧 =  101 | BLER = 3.11e-03 | 无损校验: Success (Passed)
+Eb/N0 =  3.0 dB | 总帧数 = 50000 | 错帧 =   21 | BLER = 4.20e-04 | 无损校验: Success (Passed)
+=> L=4 单帧平均译码耗时: 122.54 ms
+
+>>> 开始仿真列表大小 L = 8 (纯SCL) <<<
+Eb/N0 =  0.5 dB | 总帧数 =   500 | 错帧 =  282 | BLER = 5.64e-01 | 无损校验: Success (Passed)
+Eb/N0 =  1.0 dB | 总帧数 =   500 | 错帧 =  124 | BLER = 2.48e-01 | 无损校验: Success (Passed)
+Eb/N0 =  1.5 dB | 总帧数 =  1500 | 错帧 =  119 | BLER = 7.93e-02 | 无损校验: Success (Passed)
+Eb/N0 =  2.0 dB | 总帧数 =  8500 | 错帧 =  106 | BLER = 1.25e-02 | 无损校验: Success (Passed)
+Eb/N0 =  2.5 dB | 总帧数 = 32500 | 错帧 =  100 | BLER = 3.08e-03 | 无损校验: Success (Passed)
+Eb/N0 =  3.0 dB | 总帧数 = 50000 | 错帧 =   21 | BLER = 4.20e-04 | 无损校验: Success (Passed)
+=> L=8 单帧平均译码耗时: 233.87 ms
+
+实验二测试完毕！请检查曲线与时间数据。
