@@ -1,0 +1,8 @@
+--- 开始实验二: CA-SCL译码测试仿真 ---
+正在构造码长 N=512 (附带 8 位 CRC)...
+
+>>> 开始仿真列表大小 L = 1 (CA-SCL) <<<
+Eb/N0 =  0.5 dB | 总帧数 =   500 | 错帧 =  425 | BLER = 8.50e-01 | 无损校验: Success (Passed)
+Eb/N0 =  1.0 dB | 总帧数 =   500 | 错帧 =  326 | BLER = 6.52e-01 | 无损校验: Success (Passed)
+Eb/N0 =  1.5 dB | 总帧数 =   500 | 错帧 =  161 | BLER = 3.22e-01 | 无损校验: Success (Passed)
+Eb/N0 =  2.0 dB | 总帧数 =  1000 | 错帧 =  124 | BLER = 1.24e-01 | 无损校验: Success (Passed)

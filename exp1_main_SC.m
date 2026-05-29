@@ -1,7 +1,19 @@
 % exp1_main_SC.m
 % 极化码 SC 译码基础仿真主脚本
 clear; clc; close all;
-addpath(genpath(pwd)); % 载入所有子模块
+
+% 1. 检查是否存在 data 文件夹，如果没有则自动创建
+if ~exist('data', 'dir')
+    mkdir('data');
+end
+
+% 2. 开启控制台日志，并使用 fullfile 将其放入 data 文件夹
+% fullfile 的好处是会自动处理 Windows(\) 和 Linux(/) 的路径斜杠差异
+log_file = fullfile('data', 'Exp1_Console_Log.txt');
+diary(log_file); 
+diary on;
+
+addpath(genpath(pwd));
 
 %% ==================== 仿真配置口 ====================
 Ns = [256, 512];           % 仿真的码长集合 (可扩展1024)
@@ -121,3 +133,17 @@ end
 % 绘制结果
 plot_result(EbN0_dBs, BLER_results, BER_results, Ns, R);
 fprintf('\n仿真完成，已生成 BLER/BER 图表！\n');
+
+% 将所有核心变量自动保存到 data 文件夹
+data_file = fullfile('data', 'Exp1_SC_Results.mat');
+save(data_file, 'BLER_results', 'BER_results', 'Time_results', 'EbN0_dBs', 'Ns', 'R');
+
+% 将当前的图表导出为高质量无损的 SVG 格式
+svg_file = fullfile('data', 'Exp1_SC_Curves.svg');
+saveas(gcf, svg_file);
+
+% 自动将当前绘制的图表保存为高清 PNG 图片放入 data 文件夹
+fig_file = fullfile('data', 'Exp1_SC_Curves.png');
+exportgraphics(gcf, fig_file, 'Resolution', 300); % 300 dpi 高清输出
+
+diary off; % 最后关闭日志

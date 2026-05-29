@@ -1,7 +1,19 @@
 % exp2_main_SCL.m
-% 极化码 CA-SCL 译码仿真 (测试配置版)
+% 极化码 CA-SCL 译码仿真
 clear; clc; close all;
-addpath(genpath(pwd)); 
+
+% 1. 检查是否存在 data 文件夹，如果没有则自动创建
+if ~exist('data', 'dir')
+    mkdir('data');
+end
+
+% 2. 开启控制台日志，并使用 fullfile 将其放入 data 文件夹
+% fullfile 的好处是会自动处理 Windows(\) 和 Linux(/) 的路径斜杠差异
+log_file = fullfile('data', 'Exp2_Console_Log.txt');
+diary(log_file); 
+diary on;
+
+addpath(genpath(pwd));
 
 N = 512;                   % 固定码长
 R = 1/2;                   % 码率
@@ -158,3 +170,17 @@ for i = 1:num_L
 end
 
 fprintf('\n实验二测试完毕！请检查曲线与时间数据。\n');
+
+% 将所有核心变量自动保存到 data 文件夹
+data_file = fullfile('data', 'Exp2_SCL_Results.mat');
+save(data_file, 'BLER_results', 'Time_results', 'EbN0_dBs', 'L_vec', 'N', 'K');
+
+% 将当前的图表导出为高质量无损的 SVG 格式
+svg_file = fullfile('data', 'Exp2_SCL_Curves.svg');
+saveas(gcf, svg_file);
+
+% 自动将当前绘制的图表保存为高清 PNG 图片放入 data 文件夹
+fig_file = fullfile('data', 'Exp2_SCL_Curves.png');
+exportgraphics(gcf, fig_file, 'Resolution', 300); % 300 dpi 高清输出
+
+diary off; % 最后关闭日志
